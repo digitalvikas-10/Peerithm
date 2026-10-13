@@ -1,9 +1,19 @@
-import dotenv from "dotenv";
-import app from "./src/app.js";
-dotenv.config();
+import dotenv from 'dotenv';
 
-const PORT = process.env.PORT || 5000;
+import app from './src/app.js';
+import connectDb from './config/db.js';
 
-app.listen(PORT, () => {
-  console.log(`Peerithm API running on port ${PORT}`);
+dotenv.config()
+
+connectDb();
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
+
+
+app.listen(3000, () => {
+  console.log(`Server running on http://localhost:${3000}`);
+});
+
+
