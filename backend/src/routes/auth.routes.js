@@ -7,8 +7,16 @@ const router = express.Router();
 
 
 
+// USER ROUTES
+router.post('/user/register', authController.userRegisterController);
+router.post('/user/login', authController.userLoginController);
+router.get('/user/logout', authController.userLogoutController);
 
-router.post('/register', authController.userRegisterController);
+
+// MENTOR ROUTES
+router.post('/mentor/register', authController.mentorRegisterController);
+router.post('/mentor/login', authController.mentorLoginController);
+router.get('/mentor/logout', authController.mentorLogoutController);
 
 
 
